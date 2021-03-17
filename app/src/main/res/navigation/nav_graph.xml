@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/mostWantedListFragment">
+
+    <fragment
+        android:id="@+id/mostWantedListFragment"
+        android:name="com.example.mostwanted.fragments.MostWantedListFragment"
+        android:label="Most Wanted">
+        <action
+            android:id="@+id/action_mostWantedListFragment_to_mostWantedDetailFragment"
+            app:destination="@id/mostWantedDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mostWantedDetailFragment"
+        android:name="com.example.mostwanted.fragments.MostWantedDetailFragment"
+        android:label="{title}">
+        <argument
+            android:name="person"
+            app:argType="com.example.mostwanted.models.MostWantedPerson" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+</navigation>

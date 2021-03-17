@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fragments.MostWantedDetailFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mostwanted.viewmodels.MostWantedDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/orgImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:imageSrc="@{viewModel.person.originalImage}"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{viewModel.person.name}"
+                app:layout_constraintBottom_toTopOf="@+id/nationality"
+                app:layout_constraintStart_toEndOf="@+id/orgImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{viewModel.person.nationality}"
+                app:layout_constraintBottom_toTopOf="@+id/race"
+                app:layout_constraintStart_toEndOf="@+id/orgImage"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/race"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{viewModel.person.race}"
+                app:layout_constraintBottom_toTopOf="@+id/sex"
+                app:layout_constraintStart_toEndOf="@+id/orgImage"
+                app:layout_constraintTop_toBottomOf="@+id/nationality" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{viewModel.person.description}"
+                app:layout_constraintStart_toStartOf="@+id/orgImage"
+                app:layout_constraintTop_toBottomOf="@+id/orgImage" />
+
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{viewModel.person.sex}"
+                app:layout_constraintBottom_toBottomOf="@+id/orgImage"
+                app:layout_constraintStart_toEndOf="@+id/orgImage"
+                app:layout_constraintTop_toBottomOf="@+id/race" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>
+
